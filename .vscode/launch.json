@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ETL incremental (F5)",
+      "type": "python",
+      "request": "launch",
+      "module": "myportfolio_etl.etl_main",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": { "PYTHONPATH": "${workspaceFolder}/src" },
+      "envFile": "${workspaceFolder}/.env",
+      "args": ["--mode", "incremental"],
+      "justMyCode": true
+    },
+    {
+      "name": "ETL backfill 1990→hoy",
+      "type": "python",
+      "request": "launch",
+      "module": "myportfolio_etl.etl_main",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": { "PYTHONPATH": "${workspaceFolder}/src" },
+      "envFile": "${workspaceFolder}/.env",
+      "args": ["--mode", "backfill", "--start", "1990-01-01", "--end", "today"],
+      "justMyCode": true
+    }
+  ]
+}
